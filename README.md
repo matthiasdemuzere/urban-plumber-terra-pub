@@ -138,7 +138,7 @@ Changelog - Versions
   * Final production runs use 2 years of spin-up. That has found to be sufficient to stabilize initial soil moisture and surface temperatures.
   * Final output file name constructed as: `{TERRA_VERSION}_{SITE}_{EXPERIMENT}_{VERSION}.nc`. Eg. `TERRA_4.11_FR-Capitole_d_v5.nc`
   * Fix time setting for sites with `time_coverage_end` ending with 00:00:00 (was not taken into account).
-  * Introduce a scaler to scale (lower) initial soil moisture. Used for `GR-HECKOR (2)`, `PL-Lipowa (2)`, `PL-Narutowicza (2)`,  `US-Minneapolis1 (3)`,  `US-Minneapolis2 (3)`,  `US-WestPhoenix (5)` and `US-WestPhoenix (5)`.
+  * Introduce a scaler to scale (lower) initial soil moisture. Used for `GR-HECKOR (2)`, `PL-Lipowa (2)`, `PL-Narutowicza (2)`,  `US-Minneapolis1 (3)`,  `US-Minneapolis2 (3)`, and `US-WestPhoenix (5)`.
   * Backport `itype_evsl = 4` from COSMO 5.0 code to TERRA TSA, allowing the use of the resistance version of bare soil evaporation. 
   * **BUG FIX** in `WIMPC_C`. Value was 1e6 times too large, leading to 0 Qle from urban surfaces. 
   * **BUG FIX** in `_get_soil_type_class`. Now only sampling from true soil types: `['sand', 'sandy loam', 'loam', 'clay loam', 'clay', 'peat']`. See [here](https://github.com/matthiasdemuzere/urban-plumber-terra/commit/161ae970d4a6850d2ea14a5b45a7317e806a2ae9).
