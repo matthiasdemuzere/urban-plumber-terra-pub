@@ -42,32 +42,30 @@ Simulation status
 ### Phase II
 | Site | Baseline | Detailed | LCZ** | Version | Code Release |
 | --- | --- | --- | --- | --- | --- | 
-| AU-Preston | Available | Available | Available | 5 | v0.5.0 |
-| AU-SurreyHills | Available | Available | Available | 5 | v0.5.0 |
-| CA-Sunset | Available | Available | Available | 5 | v0.5.0 |
-| FI-Kumpula | Available | Available | Available | 5 | v0.5.0 |
-| FI-Torni | Available | Available | Available | 5 | v0.5.0 |
-| FR-Capitole | Available | Available | Available | 5 | v0.5.0 |
-| GR-HECKOR | Available | Available | Available | 5 | v0.5.0 |
-| JP-Yoyogi | Available | Available | Available | 5 | v0.5.0 |
-| KR-Jungnang | Available | Available | Available | 5 | v0.5.0 |
-| KR-Ochang | Available | Available | Available | 5 | v0.5.0 |
-| MX-Escandon | Available | Available | Available | 5 | v0.5.0 |
-| NL-Amsterdam | Available | Available | Available | 5 | v0.5.0 |
-| PL-Lipowa | Available | Available | Available | 5 | v0.5.0 |
-| PL-Narutowicza | Available | Available | Available | 5 | v0.5.0 |
-| SG-TelokKurau | Available | Available | Available | 5 | v0.5.0 |
-| UK-KingsCollege | Available | Available | Available | 5 | v0.5.0 |
-| UK-Swindon | Available | Available | Available | 5 | v0.5.0 |
-| US-Baltimore | Available | Available | Available | 5 | v0.5.0 |
-| US-Minneapolis1 | Available | Available | Available | 5 | v0.5.0 |
-| US-Minneapolis2 | Available | Available | Available | 5 | v0.5.0 |
-| US-WestPhoenix | Available | Available | Available | 5 | v0.5.0 |
-
+| AU-Preston | Submitted | Submitted | Available | 5 | v0.5.0 |
+| AU-SurreyHills | Submitted | Submitted | Available | 5 | v0.5.0 |
+| CA-Sunset | Submitted | Submitted | Available | 5 | v0.5.0 |
+| FI-Kumpula | Submitted | Submitted | Available | 5 | v0.5.0 |
+| FI-Torni | Submitted | Submitted | Available | 5 | v0.5.0 |
+| FR-Capitole | Submitted | Submitted | Available | 5 | v0.5.0 |
+| GR-HECKOR | Submitted | Submitted | Available | 5 | v0.5.0 |
+| JP-Yoyogi | Submitted | Submitted | Available | 5 | v0.5.0 |
+| KR-Jungnang | Submitted | Submitted | Available | 5 | v0.5.0 |
+| KR-Ochang | Submitted | Submitted | Available | 5 | v0.5.0 |
+| MX-Escandon | Submitted | Submitted | Available | 5 | v0.5.0 |
+| NL-Amsterdam | Submitted | Submitted | Available | 5 | v0.5.0 |
+| PL-Lipowa | Submitted | Submitted | Available | 5 | v0.5.0 |
+| PL-Narutowicza | Submitted | Submitted | Available | 5 | v0.5.0 |
+| SG-TelokKurau | Submitted | Submitted | Available | 5 | v0.5.0 |
+| UK-KingsCollege | Submitted | Submitted | Available | 5 | v0.5.0 |
+| UK-Swindon | Submitted | Submitted | Available | 5 | v0.5.0 |
+| US-Baltimore | Submitted | Submitted | Available | 5 | v0.5.0 |
+| US-Minneapolis1 | Submitted | Submitted | Available | 5 | v0.5.0 |
+| US-Minneapolis2 | Submitted | Submitted | Available | 5 | v0.5.0 |
+| US-WestPhoenix | Submitted | Submitted | Available | 5 | v0.5.0 |
 
 ** For the online TERRA version, the [WUDAPT-to-COSMO](https://github.com/matthiasdemuzere/WUDAPT-to-COSMO) tool is available, that provides spatially explicit urban canopy parameters using the concept of [Local Climate Zones](www.wupdat.org) and their corresponding parameters values from [Stewart and Oke (2012)](http://10.1175/BAMS-D-11-00019.1) and [Stewart et al. (2014)](http://10.1002/joc.3746) (see also `LCZ_UCP_default.csv` under `tables/`). As this work is still under development ([Varentsov et al., 2020](https://www.mdpi.com/2073-4433/11/12/1349)), it is not considered as the default approach for TERRA. Yet this **_LCZ_** approach is performed alongside the **_BASELINE_** and **_DETAILED_** experiment, to further test it across a range of flux tower sites provided by this experiment. <br>
 ** For this LCZ approach, surface fractions are used from the **_BASELINE_** information (lcz tables have no info on grass/tree/bare soil), and all other info needed to produce bulk parameters with [SURY](https://github.com/hendrikwout/sury/blob/master/sury.py) from the LCZ look-up tables (building height, heigh-to-width ratio, roof fraction, facet (roof, wall, road) albedo / emissivity / heat capacity / heat conductivity, and the anthropogenic heat flux).
-
 
 
 Configuration details
@@ -128,10 +126,11 @@ Notes
 ------------ 
 * The TERRA code is not open-source. One needs to be a member of the [COSMO-CLM community](https://wiki.coast.hzg.de/clmcom/) before getting access. Hence it is not included in this repository.
 
+
 Changelog - Versions
 ------------
 * **v0.6.0** (Phase II - second version - IN PROGRESS): 
-  * Backport `skin layer temperature` from COSMO 5.0 code to TERRA TSA 
+  * Backport `skin layer temperature` from COSMO 5.0 code to TERRA TSA
 
   
 * **v0.5.0** (Phase II - first version):
@@ -140,12 +139,12 @@ Changelog - Versions
   * Fix time setting for sites with `time_coverage_end` ending with 00:00:00 (was not taken into account).
   * Introduce a scaler to scale (lower) initial soil moisture. Used for `GR-HECKOR (2)`, `PL-Lipowa (2)`, `PL-Narutowicza (2)`,  `US-Minneapolis1 (3)`,  `US-Minneapolis2 (3)`, and `US-WestPhoenix (5)`.
   * Backport `itype_evsl = 4` from COSMO 5.0 code to TERRA TSA, allowing the use of the resistance version of bare soil evaporation. 
-  * **BUG FIX** in `WIMPC_C`. Value was 1e6 times too large, leading to 0 Qle from urban surfaces. 
+  * **BUG FIX** in `WIMPC_C`. Value was 1e6 times too large, leading to 0 Qle from urban surfaces.
   * **BUG FIX** in `_get_soil_type_class`. Now only sampling from true soil types: `['sand', 'sandy loam', 'loam', 'clay loam', 'clay', 'peat']`. See [here](https://github.com/matthiasdemuzere/urban-plumber-terra/commit/161ae970d4a6850d2ea14a5b45a7317e806a2ae9).
   * Full revision / restructuring of the code, making the simulation process more easy
-  * This code now only reads info from .nc file (including sitedata). csv input is no longer used. 
+  * Now only read info from .nc file (including sitedata). The .csv input is no longer used. 
   * LCZ class and netcdf meteo forcing version now read from `tables/site_lookup.csv`
-  * The choice in simulation length is now simplified, by adding the `START_RUN` argument. 
+  * The choice in simulation length is now simplified, by adding the `START_RUN` argument. More info below under **Execute the toolchain**.
   * Automatically assign soiltype class using provided clay and sand fractions.
   * Add check to make sure model compiled without error. If error, script aborts ...
   * A number of parameter flags / values were changed, to the following:
@@ -175,6 +174,6 @@ Changelog - Versions
 * **v0.0.1b**: initial commit
 
 
+    
+    
 
-    
-    
