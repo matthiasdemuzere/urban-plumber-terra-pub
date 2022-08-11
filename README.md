@@ -129,8 +129,8 @@ Notes
 
 Changelog - Versions
 ------------
-* **v0.6.0** (Phase II - second version - IN PROGRESS): 
-  * Backport `skin layer temperature` from COSMO 5.0 code to TERRA TSA
+* **v0.6.0** (IN PROGRESS / PARKED): 
+  * Backport `skin layer temperature` from COSMO 5.0 code to TERRA TSA. Results not as expected. Initiative abandoned, the `skin layer temperature` formulation is not used in Urban Plumber.
 
   
 * **v0.5.0** (Phase II - first version):
